@@ -78,26 +78,13 @@ tr:hover {background-color:#f5f5f5;}
                         <td class="td">{{$u->jumlah_beli}}</td>
                         <td class="td">{{$u->harga_barang}}</td>
                         <td class="td">{{$u->total_harga}}</td>
-                        <td>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapus"><i class="fa fa-trash"></i></button>
+                        <td class="td">
+                            <form action="{{ url('/nyokot2/delete/' . $sementara) }}" method="post">
+                                @csrf
+                                @method('DELETE') 
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            </form>
                         </td>
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Hapus Barang</h1>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  Apakah anda yakin ingin menghapus barang ini ?
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                  <button type="button" class="btn btn-primary">Yakin</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                     @endforeach
                     <tr>
                         {{-- <td class="td"></td> --}}

@@ -106,12 +106,9 @@ class UserController extends Controller
         return redirect('kasir')->with('update','Data Berhasil Di Update');
     }
 
-    // public function delete($id){
-    //     DB::table('users')->where('id', '=', $id)->delete();
-    //     $user = User::findOrFail($id);
-    //     if ($user->delete($id));
-    //     return response()->json([
-    //         'msg' => 'Data yang dipilih telah dihapus'
-    //     ]);
-    // }
+    public function delete($id){
+        // Temukan pengguna berdasarkan ID
+        DB::table('users')->where('id',$id)->delete();
+        return redirect()->back()->with('masuk','Data Berhasil Di Delete');
+    }
 }

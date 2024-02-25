@@ -174,5 +174,8 @@ class TransaksiController extends Controller
 
     }
 
-
+    public function delete($id){
+        DB::table('tb_sementara')->delete();
+        return redirect()->back();
+    }
 }

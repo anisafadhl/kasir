@@ -35,26 +35,32 @@
                         <td>Password Tidak Ditampilkan</td>
                         <td>
                             <a href="/kasir/edit/{{ $u->id}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-pen"></i></a>
-                            <button data-bs-toggle="modal" data-bs-target="#modal-hapus {{ $u->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm text-white" data-toggle="modal" data-target="#confirmDeleteModal{{ $u->id }}"><i class="fa fa-trash"></i></button>
+                            <div class="modal fade" id="confirmDeleteModal{{ $u->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Apakah Anda yakin ingin menghapus data ini?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <form action="{{ url('/kasir/delete/' . $u->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE') 
+                                                <button type="submit" class="btn btn-danger">Ya, Hapus</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
-                    <div class="modal fade" id="ModalHapus" tabindex="-1" aria-labelledby="ModalHapus" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="ModalHapus">Hapus Data User</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              ...
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     @endforeach
                 </tbody>
             </table>

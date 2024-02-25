@@ -38,12 +38,13 @@ Route::get('/user', [UserController::class, 'index']);
 Route::post('/user/store',[UserController::class, 'store']);
 Route::post('/user/update',[UserController::class, 'update']);
 Route::get('/user/edit/{id}',[UserController::class, 'edit']);
+Route::delete('/user/delete/{id}',[UserController::class, 'delete']);
 
 Route::get('/kasir',[UserController::class, 'index2']);
 Route::post('/kasir/store',[UserController::class, 'store2']);
 Route::post('/kasir/update',[UserController::class, 'update2']);
 Route::get('/kasir/edit/{id}',[UserController::class, 'edit2']);
-Route::delete('/kasir/hapus/{id}', [UserController::class, 'hapusdata']);
+Route::delete('/kasir/delete/{id}',[UserController::class, 'delete']);
 
 Route::get('/barang',[BarangController::class, 'index']);
 Route::get('/cetak',[BarangController::class, 'cetak']);
@@ -65,6 +66,7 @@ Route::get('/transaksi',[TransaksiController::class, 'index']);
 
 Route::get('/nyokot',[TransaksiController::class, 'nyokot']);
 Route::get('/nyokot2/{id}',[TransaksiController::class, 'nyokot2']);
+Route::delete('/nyokot2/delete/{id}',[TransaksiController::class, 'delete']);
 
 Route::post('/masuk/sementara',[TransaksiController::class, 'store']);
 Route::post('/masuk/semua',[TransaksiController::class, 'storesemua']);
