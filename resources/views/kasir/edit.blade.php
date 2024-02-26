@@ -9,7 +9,7 @@
         <form action="/kasir/update" method="post">
             @csrf
             <div class="form-group">
-                <label for="">Nama Kasir</label>
+                <label for="">Cashier Name</label>
                 <input type="hidden" name="id" value="{{$kasir->id}}">
                 <input type="text" name="name" class="form-control" value="{{$kasir->name}}">
         </div>

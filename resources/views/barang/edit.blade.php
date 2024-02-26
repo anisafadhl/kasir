@@ -9,18 +9,18 @@
         <form action="/barang/update" method="post">
             @csrf
            <div class="form-group">
-                <label for="">Kode Barang</label>
+                <label for="">Item Code</label>
                 <input type="hidden" name="id_barang2" class="form-control" value="{{$barang->id_barang}}" required>
                 <input type="text" name="id_barang" class="form-control" value="{{$barang->id_barang}}" required>
             </div>
             <div class="form-group">
-                <label for="">Nama Barang</label>
+                <label for="">Item Name</label>
                 <input type="text" name="nama_barang" class="form-control"  value="{{$barang->nama_barang}}" required>
             </div>
             <div class="form-group">
-                <label for="">Kategori</label>
+                <label for="">Category</label>
                 <select name="kategori_id" id="" class="form-control">
-                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option value="" disabled selected>Choose Category</option>
                     @foreach($kategori as $k)
                     @if ($barang->kategori_id == $k->id_kategori)
                         <option value="{{$k->id_kategori}}" selected>{{$k->nama_kategori}}</option>
@@ -31,11 +31,11 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="">Jumlah</label>
+                <label for="">Amount</label>
                 <input type="text" name="jumlah_barang" class="form-control"  value="{{$barang->jumlah_barang}}"  required>
             </div>
             <div class="form-group">
-                <label for="">Harga Satuan</label>
+                <label for="">Unit Price</label>
                 <input type="text" name="harga_barang" class="form-control"  value="{{$barang->harga_barang}}"  required>
             </div>
             <input type="submit" value="Update" class="btn btn-warning">

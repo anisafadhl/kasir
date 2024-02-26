@@ -69,31 +69,31 @@
       <li class="nav-item {{ (request()->is('user*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('user')}}">
           <i class="fas fa-fw fa-user"></i>
-          <span>Data Admin</span></a>
+          <span>Admin Data</span></a>
       </li>
 
       <li class="nav-item {{ (request()->is('kasir*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('kasir')}}">
           <i class="fas fa-fw fa-users"></i>
-          <span>Data Kasir</span></a>
+          <span>Cashier Data</span></a>
       </li>
 
       <li class="nav-item {{ (request()->is('kategori*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('kategori')}}">
           <i class="fas fa-fw fa-book"></i>
-          <span>Kategori</span></a>
+          <span>Category</span></a>
       </li>
 
       <li class="nav-item {{ (request()->is('barang*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('barang')}}">
           <i class="fas fa-fw fa-database"></i>
-          <span>Barang</span></a>
+          <span>Items</span></a>
       </li>
 
       <li class="nav-item {{ (request()->is('pasok*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('pasok')}}">
           <i class="fas fa-fw fa-briefcase"></i>
-          <span>Data Pasok</span></a>
+          <span>Supply Quantity</span></a>
       </li>
 
       
@@ -104,13 +104,13 @@
       <li class="nav-item {{ (request()->is('transaksi*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('transaksi')}}">
           <i class="fas fa-fw fa-shopping-basket  "></i>
-          <span>Transaksi</span></a>
+          <span>Transaction</span></a>
       </li>
 
       <li class="nav-item {{ (request()->is('laporan*')) ? 'active' : '' }}">
         <a class="nav-link" href="{{url('laporan')}}">
           <i class="fas fa-fw fa-file  "></i>
-          <span>Laporan</span></a>
+          <span>Report</span></a>
       </li>
       @endif
       @if(Auth::user()->level=='K')
@@ -118,13 +118,13 @@
        <li class="nav-item">
         <a class="nav-link" href="{{url('transaksi')}}">
           <i class="fas fa-fw fa-shopping-basket  "></i>
-          <span>Transaksi</span></a>
+          <span>Transaction</span></a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{{url('laporan')}}">
           <i class="fas fa-fw fa-file  "></i>
-          <span>Laporan</span></a>
+          <span>Report</span></a>
       </li>
       @endif
 

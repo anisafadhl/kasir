@@ -3,7 +3,7 @@
 <title>Pasok | Kasir</title>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Pasok</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Supply Quantity</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -13,18 +13,18 @@
             @if( Session::get('update') !="")
             <div class='alert alert-success'><center><b>{{Session::get('update')}}</b></center></div>        
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Data</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Add Data</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Barang</th>
-                        <th>Jumlah Pasok</th>
-                        <th>Nama Pemasok</th>
-                        <th>Waktu Pasok</th>
-                        <th>Aksi</th>
+                        <th>Items</th>
+                        <th>Supply Quantity</th>
+                        <th>Supplier Name</th>
+                        <th>Supply Time</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +49,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Masukan Data</h4>
+          <h4 class="modal-title">Input Data</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
           </button>
@@ -59,14 +59,14 @@
             @csrf
           <div class="form-group">
              <div class="input_fields_wrap">
-            <button class="add_field_button btn btn-primary">Tambah Fields</button>
+            <button class="add_field_button btn btn-primary">Add Fields</button>
             <table>
               <tr>
                 <td>
-                  <label for="">Nama Barang</label>
+                  <label for="">Item Name</label>
                   <br>
                       <select name="id_barang[]" id="" class="myselect form-control"  required>
-                          <option selected disabled value="">Pilih Jenis Barang</option>
+                          <option selected disabled value="">Select Item Type</option>
                           @foreach ($barang as $j)
                           <option value="{{$j->id_barang}}">{{$j->nama_barang}}</option>
                           @endforeach  
@@ -74,27 +74,27 @@
                     </div>
                 </td>
                 <td class="pl-4">
-                  <label for="">Jumlah</label>
-                <input type="number" name="jumlah[]" class="form-control" required placeholder="Masukan Jumlah" required>
+                  <label for="">Amount</label>
+                <input type="number" name="jumlah[]" class="form-control" required placeholder="Enter Amount" required>
                 </td>
               </tr>
             </table>
               
             </div>
             <div class="form-group">
-                <label for="">Nama Pemasok</label>
-                <input type="text" name="nama_pemasok" class="form-control" placeholder="Masukan Nama Pemasok" required>
+                <label for="">Supplier Name</label>
+                <input type="text" name="nama_pemasok" class="form-control" placeholder="Enter Supplier Name" required>
             </div>
 
             <div class="form-group">
-                <label for="">Tanggal Pasok</label>
+                <label for="">Supply Date</label>
                 <input type="date" name="tanggal_pasok" class="form-control" required>
             </div>
              
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="submit" class="btn btn-primary">Save</button>
         </form>
         </div>
       </div>

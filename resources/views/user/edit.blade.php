@@ -9,7 +9,7 @@
         <form action="/user/update" method="post">
             @csrf
             <div class="form-group">
-                <label for="">Nama Admin</label>
+                <label for="">Admin Name</label>
                 <input type="hidden" name="id" value="{{$admin->id}}">
                 <input type="text" name="name" class="form-control" value="{{$admin->name}}">
             </div>

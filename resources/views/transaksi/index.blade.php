@@ -24,30 +24,30 @@ tr:hover {background-color:#f5f5f5;}
         <div class="card shadow mb-4">
         
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Input Transaksi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Transaction Input</h6>
             </div>
             <div class="card-body">
                 <form action="/masuk/sementara" method="post">
                 @csrf
-                    <font color="blue">Kode Transaksi : {{$max_code}}</font>
+                    <font color="blue">Transaction Code : {{$max_code}}</font>
                     <input type="hidden" name="kode_transaksi" value="{{$max_code}}">
                     <div class="row mt-2">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="">Masukan  Kode Barang</label>
+                                <label for="">Input Item Code</label>
                                 <input type="text" id="id_barang" name="id_barang" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <label for="">Nama Barang</label>
+                            <label for="">Item Name</label>
                             <input type="text" id="nama" readonly name="nama_barang"  class="form-control">
                         </div>
                         <div class="col-md-4">
-                            <label for="">Harga Barang</label>
+                            <label for="">Item Price</label>
                             <input type="number" id="harga" readonly name="harga" class="form-control">
                         </div>
                         <div class="col-md-4">
-                            <label for="">Jumlah</label>
+                            <label for="">Amount</label>
                             <input type="number" name="jumlah_beli" class="form-control" required>
                         </div>
                         <div class="col-md-12 mt-3">
@@ -61,16 +61,16 @@ tr:hover {background-color:#f5f5f5;}
     <div class="col-md-8">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Transaksi</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Transaction Data</h6>
             </div>
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th class="td">Barang</th>
-                        <th class="td">Jumlah</th>
-                        <th class="td">Harga</th>
+                        <th class="td">Item</th>
+                        <th class="td">Amount</th>
+                        <th class="td">Price</th>
                         <th class="td">Total</th>
-                        <th class="td">Aksi</th>
+                        <th class="td">Action</th>
                     </tr> 
                     @foreach($sementara as $u)
                     <tr>
@@ -88,7 +88,7 @@ tr:hover {background-color:#f5f5f5;}
                     @endforeach
                     <tr>
                         {{-- <td class="td"></td> --}}
-                        <td colspan="3" class="td" style="text-align:right">Total Harga : </td>
+                        <td colspan="3" class="td" style="text-align:right">Total Price : </td>
                         <td class="td">{{$jumlah}}</td>
                         <input type="hidden" id="jumlah" value="{{$jumlah}}">
                         <td class="td"></td>
@@ -100,18 +100,18 @@ tr:hover {background-color:#f5f5f5;}
     <div class="col-md-4">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Pembayaran</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Payment</h6>
             </div>
             <div class="card-body">
                 <form action="/masuk/semua" method="post">
                     @csrf
                     <div class="form-group">
-                        <label for="">Bayar</label>
+                        <label for="">Pay</label>
                         <input type="hidden" name="kode_transaksi_kembalian" value="{{$max_code}}">
                         <input type="number" id="bayar" onkeyup="hitung2();" name="bayar" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="">Kembalian</label>
+                        <label for="">Money Changes</label>
                         <input type="number" id="kembalian" name="kembalian" readonly class="form-control">
                     </div>
                     <div class="form-group">

@@ -11,11 +11,11 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Transaksi</th>
-                        <th>Jumlah Bayar</th>
-                        <th>Kembalian</th>
-                        <th>Tanggal</th>
-                        <th>Aksi</th>
+                        <th>Transaction Code</th>
+                        <th>Total Price</th>
+                        <th>Money Changes</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -1,8 +1,8 @@
 <body>
     <p>Toko Cina Suka-Suka</p>
     <p>Jl. Raya Kebanjiran</p>
-    <p>Kasir : {{$kasir->name}}</p>
-    <p>Tanggal :{{$ambil->tanggal_beli}}</p>
+    <p>Cashier : {{$kasir->name}}</p>
+    <p>Date :{{$ambil->tanggal_beli}}</p>
     <p>===================================</p>
     <table style="margin-top:-10px">
     @foreach($transaksi as $u)
@@ -14,18 +14,18 @@
         </tr>
     @endforeach
         <tr>
-            <td colspan="3" style="text-align:right;padding-right:50px">Total Harga</td>
+            <td colspan="3" style="text-align:right;padding-right:50px">Total Price</td>
             <td>{{$jumlah}}</td>
         </tr>
         <tr>
-            <td colspan="3" style="text-align:right;padding-right:50px">Bayar</td>
+            <td colspan="3" style="text-align:right;padding-right:50px">Payment</td>
             <td>{{$kembalian->bayar}}</td>
         </tr>
         <tr>
-            <td colspan="3" style="text-align:right;padding-right:50px">Kembalian</td>
+            <td colspan="3" style="text-align:right;padding-right:50px">Money Changes</td>
             <td>{{$kembalian->kembalian}}</td>
         </tr>
     </table>
     <p>===================================</p>
-    <p>Terimakasih Telah berbelanja di tempat kami <br>semoga menyenangkan</p>
+    <p>Thank you for shopping at our store <br>Have a nice day!</p>
 </body>

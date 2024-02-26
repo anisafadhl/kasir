@@ -13,7 +13,7 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Barang</div>
+          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Items</div>
           <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlah_barang}}</div>
         </div>
         <div class="col-auto">
@@ -30,7 +30,7 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Pasok</div>
+          <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Supply Quantity</div>
           <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlah_pasok}}</div>
         </div>
         <div class="col-auto">
@@ -46,7 +46,7 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Jumlah Transaksi</div>
+          <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Transaction Amount</div>
           <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlah_transaksi}}</div>
         </div>
         <div class="col-auto">
@@ -64,7 +64,7 @@
     <div class="card-body">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah Kasir</div>
+          <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Cashier</div>
           <div class="h5 mb-0 font-weight-bold text-gray-800">{{$jumlah_kasir}}</div>
         </div>
         <div class="col-auto">
@@ -78,7 +78,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data - data Transaksi</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Transaction Data</h6>
     </div>
     <div class="card-body">
     <div class="table-responsive">
@@ -86,11 +86,11 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Transaksi</th>
-                        <th>Jumlah Bayar</th>
-                        <th>Kembalian</th>
-                        <th>Tanggal</th>
-                        <th>Aksi</th>
+                        <th>Transaction Code</th>
+                        <th>Payment Amount</th>
+                        <th>Money Changes</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

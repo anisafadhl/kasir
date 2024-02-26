@@ -3,7 +3,7 @@
 <title>Barang | Kasir</title>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Barang</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Item Data</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -15,7 +15,7 @@
             @endif
             <div class="row">
                 <div class="col-md-6">
-                    <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Data</button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Add Data</button>
                 </div>
             </div>
             <br>
@@ -24,12 +24,12 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Barang</th>
-                        <th>Nama Barang</th>
-                        <th>Kategori</th>
-                        <th>Jumlah</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Price</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +55,7 @@
     <!-- Modal content-->
     <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title">Masukan Data</h4>
+        <h4 class="modal-title">Input Data</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -64,34 +64,34 @@
     <form action="/barang/store" method="post">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="">Kode Barang</label>
+            <label for="">Item Code</label>
             <input type="text" name="id_barang" class="form-control"  required>
         </div>
         <div class="form-group">
-            <label for="">Nama Barang</label>
+            <label for="">Item Name</label>
             <input type="text" name="nama_barang" class="form-control"  required>
         </div>
         <div class="form-group">
-            <label for="">Kategori</label>
+            <label for="">Category</label>
             <select name="kategori_id" id="" class="form-control">
-                <option value="" disabled selected>Pilih Kategori</option>
+                <option value="" disabled selected>Choose Category</option>
                 @foreach($kategori as $k)
                     <option value="{{$k->id_kategori}}">{{$k->nama_kategori}}</option>
                 @endforeach
             </select>
         </div>
         <div class="form-group">
-            <label for="">Jumlah</label>
+            <label for="">Total</label>
             <input type="text" name="jumlah_barang" class="form-control"  required>
         </div>
         <div class="form-group">
-            <label for="">Harga</label>
+            <label for="">Price</label>
             <input type="text" name="harga_barang" class="form-control"  required>
         </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
     </div>
     </div>

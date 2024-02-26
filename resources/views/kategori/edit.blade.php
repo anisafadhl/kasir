@@ -9,7 +9,7 @@
         <form action="/kategori/update" method="post">
             @csrf
             <div class="form-group">
-                <label for="">Nama Kategori</label>
+                <label for="">Category Name</label>
                 <input type="hidden" name="id_kategori" value="{{$kategori->id_kategori}}">
                 <input type="text" name="nama_kategori" class="form-control" value="{{$kategori->nama_kategori}}">
             </div>

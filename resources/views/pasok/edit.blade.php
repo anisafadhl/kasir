@@ -9,21 +9,21 @@
         <form action="/pasok/update" method="post">
             @csrf
             <div class="form-group">
-                <label for="">Nama Barang</label>
+                <label for="">Item Name</label>
                 <input type="hidden" name="id_pasok" value={{$pasok->id_pasok}}>
                 <input type="hidden" name="id_barang" class="form-control"  value="{{$pasok->barang_pasok_id}}" required>
                 <input type="text" name="nama_barang" readonly class="form-control"  value="{{$pasok->nama_barang}}" required>
             </div>
             <div class="form-group">
-                <label for="">Jumlah</label>
+                <label for="">Amount</label>
                 <input type="text" name="jumlah" class="form-control"  value="{{$pasok->jumlah_pasok}}"  required>
             </div>
             <div class="form-group">
-                <label for="">Nama Pemasok</label>
+                <label for="">Supplier Name</label>
                 <input type="text" name="nama_pemasok" class="form-control"  value="{{$pasok->nama_pemasok}}"  required>
             </div>
             <div class="form-group">
-                <label for="">Waktu Pasok</label>
+                <label for="">Supply Time</label>
                 <input type="text" name="tanggal_pasok" class="form-control"  value="{{$pasok->tanggal_pasok}}"  required>
             </div>
             <input type="submit" value="Update" class="btn btn-warning">
