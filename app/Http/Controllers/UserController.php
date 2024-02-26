@@ -42,7 +42,7 @@ class UserController extends Controller
                 'level' => 'A',
             ]);
         
-        return redirect()->back()->with('masuk','Data Berhasil Di Input');
+        return redirect()->back()->with('masuk','Data Saved Successfully!');
     }
 
     public function edit($id)
@@ -58,7 +58,7 @@ class UserController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect('user')->with('update','Data Berhasil Di Update');
+        return redirect('user')->with('update','Data Updated Successfully!');
     }
 
     #kasir
@@ -87,7 +87,7 @@ class UserController extends Controller
                 'level' => 'K',
             ]);
         
-        return redirect()->back()->with('masuk','Data Berhasil Di Input');
+        return redirect()->back()->with('masuk','Data Saved Successfully!');
     }
 
     public function edit2($id)
@@ -103,12 +103,12 @@ class UserController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect('kasir')->with('update','Data Berhasil Di Update');
+        return redirect('kasir')->with('update','Data Updated Successfully!');
     }
 
     public function delete($id){
         // Temukan pengguna berdasarkan ID
         DB::table('users')->where('id',$id)->delete();
-        return redirect()->back()->with('masuk','Data Berhasil Di Delete');
+        return redirect()->back()->with('masuk','Data Deleted Successfully!');
     }
 }

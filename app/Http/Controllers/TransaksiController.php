@@ -101,7 +101,7 @@ class TransaksiController extends Controller
     {
         $tanggal = date('Y-m-d');
         if($request->kembalian < 0){
-            return redirect()->back()->with('gagal','Bayaran Kurang');
+            return redirect()->back()->with('gagal','Insufficient Funds!');
         }
 
         DB::table('tb_kembalian')->insert([

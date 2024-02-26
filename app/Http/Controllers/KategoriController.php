@@ -35,7 +35,7 @@ class KategoriController extends Controller
             'nama_kategori' => $request->nama_kategori
         ]);
 
-        return redirect()->back()->with('masuk','Data Berhasil Di Input');
+        return redirect()->back()->with('masuk','Data Input Successfully!');
     }
 
     public function edit($id)
@@ -51,6 +51,6 @@ class KategoriController extends Controller
             'nama_kategori' => $request->nama_kategori
         ]);
 
-        return redirect('kategori')->with('update','Data Berhasil Di Update');
+        return redirect('kategori')->with('update','Data Updated Successfully!');
     }
 }

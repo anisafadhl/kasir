@@ -13,17 +13,17 @@
             @if( Session::get('update') !="")
             <div class='alert alert-success'><center><b>{{Session::get('update')}}</b></center></div>        
             @endif
-            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah Data</button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#tambah">Add Data</button>
             <br>
             <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th>Name</th>
                         <th>Email</th>
                         <th>Password</th>
-                        <th>Aksi</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +32,7 @@
                         <td>{{++$i}}</td>
                         <td>{{$u->name}}</td>
                         <td>{{$u->email}}</td>
-                        <td>Password Tidak Ditampilkan</td>
+                        <td>Password not displayed</td>
                         <td><a href="/user/edit/{{ $u->id}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-pen"></i></a></td>
                     </tr>
                     @endforeach
@@ -47,7 +47,7 @@
     <!-- Modal content-->
     <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title">Masukan Data</h4>
+        <h4 class="modal-title">Input Data</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -56,7 +56,7 @@
     <form action="/user/store" method="post">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="">Nama</label>
+            <label for="">Name</label>
             <input type="text" name="name" class="form-control"  required>
         </div>
         <div class="form-group">
@@ -70,7 +70,7 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-primary">Save</button>
     </form>
     </div>
     </div>

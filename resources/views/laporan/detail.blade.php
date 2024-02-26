@@ -57,7 +57,7 @@ tr:hover {background-color:#f5f5f5;}
                     </tr>
                 </table>
                 <div class="form-group">
-                    <a href="/cetak/{{$ambil->kode_transaksi}}" class="btn btn-primary">Print Receipt</a>
+                    <a href="/cetak/{{$ambil->kode_transaksi}}" class="btn btn-warning">Print Receipt</a>
                 </div>
                 </div>
             </div>  

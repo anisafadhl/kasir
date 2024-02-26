@@ -56,7 +56,7 @@ class BarangController extends Controller
                 'harga_barang' => $request->harga_barang,
         ]);
 
-        return redirect()->back()->with('masuk','Data Berhasil Di Input');
+        return redirect()->back()->with('masuk','Data Input Successfully!');
         }
         
     }
@@ -82,7 +82,7 @@ class BarangController extends Controller
             'harga_barang' => $request->harga_barang,
         ]);
 
-        return redirect('barang')->with('update','Data Berhasil Di Update');
+        return redirect('barang')->with('update','Data Updated Successfully!');
         
     }
 }

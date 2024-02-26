@@ -47,7 +47,7 @@ class PasokController extends Controller
                 ]);
         }
        
-        return redirect()->back()->with('masuk','Data Berhasil Di Input');
+        return redirect()->back()->with('masuk','Data Input Successfully!');
     }
 
     public function edit($id)
@@ -90,7 +90,7 @@ class PasokController extends Controller
             'nama_pemasok'=>$request->nama_pemasok
         ]);
         // alihkan halaman ke halaman pegawai
-        return redirect('/pasok')->with('update','Data Berhasil Di Update');
+        return redirect('/pasok')->with('update','Data Updated Successfully!');
     }
 
 }
