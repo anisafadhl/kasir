@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\BarangController;
-use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\LaporanController;
-use App\Http\Controllers\PasokController;
-use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PasokController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\ChangePasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,8 @@ Route::get('/cetak',[BarangController::class, 'cetak']);
 Route::post('/barang/store',[BarangController::class, 'store']);
 Route::post('/barang/update',[BarangController::class, 'update']);
 Route::get('/barang/edit/{id_barang}',[BarangController::class, 'edit']);
+Route::delete('/barang/delete/{id_barang}',[BarangController::class, 'delete']);
+
 
 Route::get('/pasok',[PasokController::class, 'index']);
 Route::post('/pasok/store',[PasokController::class, 'store']);

@@ -85,4 +85,10 @@ class BarangController extends Controller
         return redirect('barang')->with('update','Data Updated Successfully!');
         
     }
+    
+    public function delete($id)
+    {
+        DB::table('tb_barang')->where('id_barang',$id)->delete();
+        return redirect()->back()->with('delete','Data Deleted Successfully!');
+    }
 }

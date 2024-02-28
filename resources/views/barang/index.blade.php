@@ -19,7 +19,6 @@
                 </div>
             </div>
             <br>
-            <br>
             <table id="dataTable" class="table table-bordered" cellspacing="0">
                 <thead>
                     <tr>
@@ -41,7 +40,33 @@
                         <td>{{$u->nama_kategori}}</td>
                         <td>{{$u->jumlah_barang}}</td>
                         <td>{{$u->harga_barang}}</td>
-                        <td><a href="/barang/edit/{{$u->id_barang}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-pen"></i></a></td>
+                        <td>
+                            <a href="/barang/edit/{{$u->id_barang}}" class="btn btn-primary btn-sm ml-2"><i class="fa fa-pen"></i></a>
+                            <button type="button" class="btn btn-danger btn-sm text-white" data-toggle="modal" data-target="#confirmDeleteModal{{ $u->id_barang }}"><i class="fa fa-trash"></i></button>
+                            <div class="modal fade" id="confirmDeleteModal{{ $u->id_barang }}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="confirmDeleteModalLabel">Delete Confirmation</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure want to delete this item?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <form action="{{ url('/barang/delete/' . $u->id_barang) }}" method="post">
+                                                @csrf
+                                                @method('DELETE') 
+                                                <button type="submit" class="btn btn-danger">Delete it</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

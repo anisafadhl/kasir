@@ -109,6 +109,6 @@ class UserController extends Controller
     public function delete($id){
         // Temukan pengguna berdasarkan ID
         DB::table('users')->where('id',$id)->delete();
-        return redirect()->back()->with('masuk','Data Deleted Successfully!');
+        return redirect()->back()->with('delete','Data Deleted Successfully!');
     }
 }
